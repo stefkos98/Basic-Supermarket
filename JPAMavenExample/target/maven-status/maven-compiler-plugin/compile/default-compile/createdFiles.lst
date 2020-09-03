@@ -1,0 +1,11 @@
+com\jpa\entities\Kartica.class
+com\ejb\services\ClanService.class
+com\ejb\services\impl\ProizvodServiceImpl.class
+com\ejb\services\KarticaService.class
+com\ejb\services\impl\ClanServiceImpl.class
+com\ejb\services\ProizvodService.class
+com\ejb\services\impl\KupovinaServiceImpl.class
+com\ejb\services\KupovinaService.class
+com\ejb\services\impl\KarticaServiceImpl.class
+com\jpa\entities\Proizvod.class
+com\jpa\entities\Clan.class

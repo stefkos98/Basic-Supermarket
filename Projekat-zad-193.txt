@@ -1,0 +1,12 @@
+193. Informacioni sistem supermarketa.
+ Supermarket svojim kupcima omogucava da se registruju i dobiju clansku karticu, kojom se mogu ostvariti razni benefiti. 
+ Kupovinom u supermarketu, zavisno od velicine placenog racuna, vrši se skaliranje i dobijaju bodovi koji su akumulirani na kartici.
+ Ovim bodovima, verni kupci mogu ostvariti razne benefite – dobiti specijalne proizvode, rezervisane samo za clanove,
+ iz posebnog kataloga besplatno (zavisno od broja akumuliranih poena), 
+ pri cemu se broj bodova umanjuje za cenu proizvoda izraženu u bodovima,
+ ili kupovati neke od redovnih proizvoda iz marketa po promotivnim cenama. 
+ Osim toga, supermarket, u saradnji sa drugim kompanijama nudi popuste i pogodnosti za clanove sa velikim brojem poena –
+ specijalne tarife za SIM kartice kod nekog od mobilnih operatera, kursevi jezika po redukovanim cenama i slicno.
+
+
+Obrazac: UCESNIK – ULOGA

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"
+ 	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+
+   <h:body>
+      <h2 style="font-size: 24pt;color: #2237ad;font-style: oblique;font-family: cursive;">SUPERMARKET</h2>
+      <hr />
+         <h3 style="font-size: 14pt;color: #2237ad;font-style: oblique;font-family: cursive;">Kupovina proizvoda</h3>
+      
+      <h:form>
+         <h4 style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;">Odabir proizvoda i placanje</h4>
+      <h:outputLabel  value="Id clana koji kupuje:" style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;"/>
+      <div>
+      <h:inputText value="#{kupovinaController.idclana}" style="border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"
+      ></h:inputText>
+      </div>
+      <div>
+      <h:outputLabel value="Id proizvoda koji se kupuje:" style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;"/>
+      </div>
+      <div>
+      <h:inputText value="#{kupovinaController.idproizvoda}" style="border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"
+      ></h:inputText>
+      </div>
+      <div>
+        <h:outputLabel value="Kolicina:" style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;"/>
+      </div>
+      <div>
+      <h:inputText value="#{kupovinaController.kolicina}" style="border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;">
+      </h:inputText>
+      </div>
+      <div>
+      <h:outputLabel value="Koriscenje kartice(true ili false):" style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;"/>
+      </div>
+      <div>
+      <h:inputText value="#{kupovinaController.kartica}" style="border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"
+      ></h:inputText>
+      </div>
+       <div>
+      <h:outputLabel value="Koriscenje bodova(true ili false):" style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;"/>
+      </div>
+      <div>
+      <h:inputText value="#{kupovinaController.bodovi}" style="border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"
+      ></h:inputText>
+      </div>
+
+      <h:commandButton value="Izvrsi Kupovinu" action="#{kupovinaController.dodajKupovinu(kupovinaController.idclana,kupovinaController.idproizvoda, kupovinaController.kolicina,kupovinaController.kartica,kupovinaController.bodovi)}" style="border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"
+      ></h:commandButton>         
+    </h:form>
+    <h:button value="Nazad" style="border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;" outcome="index.xhtml" />
+   </h:body>
+</html>

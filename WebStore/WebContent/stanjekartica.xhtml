@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"
+ 	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://java.sun.com/jsf/html">
+
+
+   <h:body>
+         <h:form>
+	<h3   style="font-size: 24pt;color: #2237ad;font-style: oblique;font-family: cursive;" >Stranica za prikaz podataka o kartici</h3>
+		<h:panelGrid columns="2" cellpadding="5">
+			
+			<p:outputLabel value="Trenutan broj bodova: " style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;" />
+			<p:outputLabel style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;" value="#{karticaController.vratiStanje()}" />
+			<p:outputLabel value="Ukupno sakupljen broj bodova: " style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;" />
+			<p:outputLabel style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;" value="#{karticaController.vratiStanje2()}" />
+			
+		</h:panelGrid>
+		<h:button value="Nazad" style="border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;" outcome="indexkartice.xhtml" />
+	</h:form>
+   </h:body>
+   </html>

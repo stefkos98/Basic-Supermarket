@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"
+ 	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+
+   <h:body>
+      <h2 style="font-size: 24pt;color: #2237ad;font-style: oblique;font-family: cursive;">SUPERMARKET</h2>
+      <hr />
+         <h3 style="font-size: 14pt;color: #2237ad;font-style: oblique;font-family: cursive;">Ovo je stranica o karticama</h3>
+      
+      <h:form>
+         <h4 style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;">Registracija novog clana</h4>
+         <h:button value="Registracija novog clana" outcome="registracijaclana.xhtml" style = "border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;" />
+         <h4 style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;">Registracija nove kartice(Potrebno je prvo biti clan)</h4>
+         <h:button value="Registracija nove kartice" outcome="registracijakartice.xhtml" style = "border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;" />
+         <h4 style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;">Promena PIN-a</h4>
+	      <h:outputLabel value="Id kartice"  style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;"/>
+	      <div>
+	      <h:inputText value="#{karticaController.idkartice}" style = "border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"></h:inputText>
+	      </div>
+	      <div>
+	      <h:outputLabel value="Stari PIN:" style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;" />
+	      </div>
+	      <div>
+	      <h:inputText value="#{karticaController.staripin}" style = "border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"></h:inputText>
+	      </div>
+	   
+	      <div>
+	      <h:outputLabel value="Novi PIN:" style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;"/>
+	      </div>
+	      <div>
+	      <h:inputText value="#{karticaController.pin}" style = "border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"></h:inputText>
+	      </div>
+	      <h:commandButton value="Promeni pin" action="#{karticaController.promenaPina(karticaController.idkartice,karticaController.staripin, karticaController.pin)}" style = "border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"></h:commandButton>
+	      
+		  <h4 style="color: #2237ad;font-style: oblique;font-family: cursive;">Produzi vazenje kartice</h4>	      
+	      <div>
+	      <h:outputLabel value="Id kartice" style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;"/>
+	      <h:inputText  value="#{karticaController.idkartice}" style = "border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"></h:inputText>
+	      <h:commandButton value="Produzi vazenje kartice" action="#{karticaController.produzidatum(karticaController.idkartice)}" style = "border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"></h:commandButton>
+	      </div>
+	      	    </h:form>
+      <h4  style="color: #2237ad;font-style: oblique;font-family: cursive;">Provera stanja</h4>
+      <h:form>
+		<h:panelGrid columns="2" cellpadding="5">
+			<h:outputLabel value="Unesite svoj id (Neophodno potvrditi unos enterom)" style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;" />
+			<h:inputText value="#{karticaController.IId}" style="border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;" ></h:inputText>
+			<h:outputLabel></h:outputLabel>
+               <h:button value="Prikazi" outcome="stanjekartica.xhtml" style = "border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"/>
+         </h:panelGrid>
+        </h:form>
+	      <h:form>
+	      <div>  
+	      <h4 style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;">Izdavanje nove kartice i unistavanje stare</h4>
+	      
+	      <h:outputLabel value="Id clana:" style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;"/>
+	      </div>
+	      <div>
+	      <h:inputText value="#{karticaController.idclana}" style = "border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"></h:inputText>
+	      </div>
+	      <h:commandButton value="Promeni karticu" action="#{karticaController.promenaKartice(karticaController.idclana)}" style = "border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"></h:commandButton>
+	      </h:form>
+	      <br/>
+	       <h:form>
+	         <h4 style="color: #2237ad;font-style: oblique;font-family: cursive;">Deaktivacija kartice</h4>
+	      <h:outputLabel value="Id kartice:" style="font-size: 10pt;color: #2237ad;font-style: oblique;font-family: cursive;"/>
+	      <div>
+	      <h:inputText value="#{karticaController.idkartice}" style = "border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"></h:inputText>
+	      	 <h:commandButton value="Deaktiviraj karticu" action="#{karticaController.brisiKarticu(karticaController.idkartice)}" style = "border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"></h:commandButton>         
+	      
+	      </div>   
+	      </h:form>
+	      <h:form>
+	         <h4 style="color: #2237ad;font-style: oblique;font-family: cursive;">Prikaz podataka o svim karticama</h4>
+	      	 <h:button value="Prikazi" outcome="listakartica.xhtml" style = "border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;"></h:button>         
+	      </h:form>
+	         
+	      <br></br>
+         <h:button value="Nazad" style="border-radius: 12px;background-color: white;color: black;border: 2px solid #607D8B;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -10px 3px 20px 0 #9E9E9E;/* font-size: 18pt; */color: purple;font-family: cursive;" outcome="index.xhtml" />
+
+   </h:body>
+</html>
